@@ -28,79 +28,121 @@ Zusätzlich zum Mainnet gibt es öffentliche Testnetze. Dabei handelt es sich um
 
 Es ist generell wichtig, jeden Vertragscode, den du auf einem Testnetz schreibst, zu testen, bevor du ihn in das Mainnet einbringst. Wenn du eine dApp erstellst, die an bestehende Smart Contracts angeknüpft ist, haben die meisten Projekte Kopien in Testnetze, mit denen du interagieren kannst, bereitgestellt.
 
-Die meisten Testnetze verwenden den Konsensmechanismus Proof-of-Authority. Dies bedeutet, dass eine kleine Anzahl von Nodes ausgewählt wird, um Transaktionen zu validieren und neue Blöcke zu erstellen – und ihre Identität im Prozess zu hinterlegen. Es ist schwer, das Mining auf einem Testnetz zu fördern, was es aufgrund geringer Validierungsressourcen verwundbar machen kann.
+Die meisten Testnetze verwenden anfangs den Konsensmechanismus Proof-of-Authority. Dies bedeutet, dass eine kleine Anzahl von Nodes ausgewählt wird, um Transaktionen zu validieren und neue Blöcke zu erstellen – und ihre Identität im Prozess zu hinterlegen. Als Vorbereitung [der Zusammenführung](/upgrades/merge) wurden alle unterstützten Testnetze auf den Proof-of-Stake Konsensmechanismus umgestellt.
 
 ETH auf Testnetzen hat keinen echten Wert. Daher gibt es keine Märkte für Testnet ETH. Da du ETH benötigst, um tatsächlich mit Ethereum zu interagieren, bekommen die meisten Leute Testnet ETH von Faucets. Die meisten Faucets sind Webapplikationen, bei denen du eine Adresse eingeben kannst, an die die ETH gesendet werden sollen.
 
-#### Arbitrum Rinkeby {#arbitrum-rinkeby}
+### Welches Testnetz sollte ich nutzen?
 
-Ein Testnetz für [Arbitrum](https://arbitrum.io/).
+Die beiden öffentlichen Proof-of-Stake Testnetze (die Client-Entwickler nach der Zusammenführung pflegen) sind Goerli und Sepolia. Das Goerli-Netzwerk wurde mit dem Prater Beacon Chain Testnetz zusammengeführt. Das Sepolia-Netzwerk wurde gegründet, um den Übergang zum Proof-of-Stake zu testen.
 
-##### Arbitrum Rinkeby faucets
+**[Sepolia](#sepolia) ist das empfohlene Testnetz für Anwendungsentwicklung**.
+Das Sepolia-Netzwerk wird von einer ausgewählten Gruppe von Validatore betrieben.  Dies hat den Vorteil, dass das Netzwerk als sehr zuverlässig angesehen werden kann (Keine fehlenden Blöcke o.Ä.).
+Das Sepolia-Testnetz ist ziemlich neu, was bedeutet, dass sein Zustand und seine Geschichte wesentlich kleiner sind als bei älteren Testnetzen, was wiederum dazu führt, dass das Netzwerk schnell synchronisiert werden kann und dass das Ausführen eines Nodes darauf weniger Speicherplatz benötigt. Dies ist nützlich für Benutzer, die schnell einen Node hochfahren und direkt mit dem Netzwerk interagieren möchten.
 
-- [FaucETH](https://fauceth.computing.org) (Multi-Chain-faucet ohne die Notwendigkeit eines sozialen Kontos)
-- [Chainlink faucet](https://faucets.chain.link/)
-- [Paradigmatischer Faucet](https://faucet.paradigm.xyz/)
+- Ausgewähltes Validator-Set, kontrolliert von Client-Entwicklern und Testteams
+- Neues Testnetz, weniger Anwendungen verfügbar als in anderen Testnetzen
+- Schnelle Synchronisierung und Ausführung eines Nodes, erfordert minimalen Speicherplatz
 
-#### Görli {#goerli}
+**[Goerli](#goerli) ist das empfohlene Testnetz zum Testen von Validatoren und Staking**.
+Das Goerli-Netzwerk ist offen für Benutzer, die einen eigenen Testnet-Validator betreiben möchten. Staker und Node Betreiber, die Protokoll-Upgrades testen möchten, bevor sie im Mainnet bereitgestellt werden, sollten daher Goerli verwenden.
 
-Ein Proof-of-Authority-Testnetz, das über verschiedene Clients hinweg funktioniert.
+- Offenes Validator-Set, Staker können eigene Validatoren betreiben
+- Großer Status, nützlich zum Testen komplexer Interaktionen mit anderen Anwendungen
+- Längere Synchronisierung und mehr Speicherplatz zum Ausführen eines Nodes erforderlich
 
-##### Görli faucets
 
-- [Görli faucet](https://faucet.goerli.mudit.blog/)
-- [Chainlink faucet](https://faucets.chain.link/)
+#### Sepolia {#sepolia}
+
+Sepolia ist ein Proof-of-Stake Testnetz und das empfohlene Standard-Testnetz für die Anwendungsentwicklung.
+
+- [Webseite](https://sepolia.dev/)
+- [GitHub](https://github.com/goerli/sepolia)
+- [Otterscan](https://sepolia.otterscan.io/)
+- [Etherscan](https://sepolia.etherscan.io)
+
+##### Sepolia faucets
+
+- [Sepolia faucet](https://faucet.sepolia.dev/)
+- [FaucETH](https://fauceth.komputing.org)
+- [Sepolia PoW Faucet](https://sepolia-faucet.pk910.de/)
+
+#### Goerli {#goerli}
+
+Goerli ist ein Proof-of-Stake-Testnetz und das empfohlene Standard-Testnetz zum Testen von Validierung und Staken.
+
+- [Webseite](https://goerli.net/)
+- [GitHub](https://github.com/goerli/testnet)
+- [Etherscan](https://goerli.etherscan.io)
+
+##### Goerli faucets
+
+- [Goerli faucet](https://faucet.goerli.mudit.blog/)
 - [Alchemy Goerli Faucet](https://goerlifaucet.com/)
+- [All That Node Goerli Faucet](https://www.allthatnode.com/faucet/ethereum.dsrv)
 
-#### Kintsugi {#kintsugi}
+Wenn Sie einen Validator im Goerli-Netzwerk betreiben möchten, besuchen Sie den EthStaker Discord-Server. Dort können Sie bis zu zwei Validatoren ohne die erforderlichen 32 ETH erstellen.
+Dazu müssen Sie sich zunächst im Discord-Server verifizieren (#cheap-goerli-validator channel) und können anschließend das ["cheap goerli validator"-Launchpad](https://goerli.launchpad.ethstaker.cc/en/) nutzen.
 
-Ein Fusionstestnetz für Ethereum.
+#### Ropsten _(veraltet)_ {#ropsten}
 
-##### Kintsugi faucets
+_Hinweis: [Das Ropsten-Testnetz ist veraltet] (https://github.com/ethereum/pm/issues/460) und erhält keine Protokoll-Upgrades mehr. Bitte ziehen Sie ihre Anwendungen zu Sepolia oder Goerli um._
 
-- [FaucETH](https://fauceth.computing.org) (Multi-Chain-Faucet ohne die Notwendigkeit eines Social-Kontos)
-- [Kintsugi faucet](https://faucet.kintsugi.themerge.dev/)
+Ropsten ist ein Proof-of-Stake-Testnet, welches bis zur Zusammenführung im Mai 2022 als öffentliches Proof-of-Work Testnetz betrieben wurde. Das Ropsten Testnetz wird Ende 2022 eingestellt.
 
-#### Kovan {#kovan}
+##### Ropsten faucets
 
-Ein Proof-of-Authority-Testnetz für diejenigen, die OpenEthereum-Clients verwenden.
-
-##### Kovan faucets
-
-- [FaucETH](https://fauceth.computing.org) (Multi-Chain-Faucet ohne die Notwendigkeit eines Social-Kontos)
-- [Kovan faucet](https://faucet.kovan.network/)
-- [Chainlink faucet](https://faucets.chain.link/)
+- [FaucETH](https://fauceth.komputing.org) (multi-Chain faucet)
 - [Paradigm faucet](https://faucet.paradigm.xyz/)
 
-#### Optimistischer Kovan {#optimistic-kovan}
+#### Rinkeby _(veraltet)_ {#rinkeby}
 
-Ein Testnetz für [Optimismus](https://www.optimism.io/).
+_Hinweis: [das Rinkeby-Testnetz ist veraltet] (https://github.com/ethereum/pm/issues/460) und erhält keine Protokoll-Upgrades mehr. Bitte ziehen Sie ihre Anwendungen zu Sepolia oder Goerli um._
 
-##### Optimistische Kovan-Faucets
-
-- [FaucETH](https://fauceth.computing.org) (Multi-Chain-Faucet ohne die Notwendigkeit eines Social-Kontos)
-- [Paradigmatischer Faucet](https://faucet.paradigm.xyz/)
-
-#### Rinkeby {#rinkeby}
-
-Ein Proof-of-Authority-Testnetz für diejenigen, die den Geth-Client verwenden.
+Ein Proof-of-Authority Testnet für diejenigen, die alte Versionen des Geth-Clients verwenden.
 
 ##### Rinkeby faucets
 
-- [FaucETH](https://fauceth.computing.org) (Multi-Chain-Faucet ohne die Notwendigkeit eines Social-Kontos)
+- [FaucETH](https://fauceth.komputing.org) (multi-Chain faucet without the need for social account)
 - [Alchemy faucet](https://RinkebyFaucet.com)
 - [Chainlink faucet](https://faucets.chain.link/)
 - [Paradigm faucet](https://faucet.paradigm.xyz/)
 - [Rinkeby faucet](https://faucet.rinkeby.io/)
 
-#### Ropsten {#ropsten}
+#### Kovan _(veraltet)_ {#kovan}
 
-Ein Proof-of-Work-Testnetz. Das bedeutet, es ist die beste gleichartige Testnetzumgebung von Ethereum.
+_Hinweis: [das Kovan-Testnetz ist veraltet] (https://github.com/ethereum/pm/issues/460) und erhält keine Protokoll-Upgrades mehr. Bitte ziehen Sie ihre Anwendungen zu Sepolia oder Goerli um._
 
-##### Ropsten faucets
+Ein sehr altes Proof-of-Authority-Testnetz für diejenigen, die noch OpenEthereum-Clients verwenden.
 
-- [FaucETH](https://fauceth.computing.org) (Multi-Chain-Faucet ohne die Notwendigkeit eines Social-Kontos)
-- [Paradigmatischer Faucet](https://faucet.paradigm.xyz/)
+##### Kovan faucets
+
+- [FaucETH](https://fauceth.komputing.org) (multi-Chain faucet without the need for social account)
+- [Chainlink faucet](https://faucets.chain.link/)
+- [Paradigm faucet](https://faucet.paradigm.xyz/)
+
+### Layer 2 testnets {#layer-2-testnets}
+
+[Layer 2 (L2)](/layer-2/) ist ein Sammelbegriff für eine bestimmte Art von Ethereum-Skalierungslösungen. Eine Layer 2 ist eine separate Blockchain, die Ethereum erweitert und die Sicherheitsgarantien von Ethereum erbt. Layer-2 Testnetze sind normalerweise eng mit einem öffentlichen Ethereum-Testnetz verbunden.
+
+#### Arbitrum Rinkeby {#arbitrum-rinkeby}
+
+Ein Testnetz für [Arbitrum](https://arbitrum.io/).
+
+Arbitrum Rinkeby faucets:
+
+- [FaucETH](https://fauceth.komputing.org) (multi-Chain faucet)
+- [Chainlink faucet](https://faucets.chain.link/)
+- [Paradigm faucet](https://faucet.paradigm.xyz/)
+
+#### Optimistic Kovan {#optimistic-kovan}
+
+Ein Testnetz für [Optimism](https://www.optimism.io/).
+
+Optimistic Kovan faucets:
+
+- [FaucETH](https://fauceth.komputing.org) (multi-Chain faucet)
+- [Paradigm faucet](https://faucet.paradigm.xyz/)
 
 ## Private Netzwerke {#private-networks}
 
